@@ -644,10 +644,11 @@ void MainWindow::updateWindowTitle(const APIUserAccount& user)
           .arg(m_OrganizerCore.managedGame()->displayGameName(),
                m_OrganizerCore.getVersion().string(Version::FormatCondensed));
 
-  if (!user.name().isEmpty()) {
-    const QString premium = (user.type() == APIUserAccountTypes::Premium ? "*" : "");
-    title.append(QString(" (%1%2)").arg(user.name(), premium));
-  }
+  // Username display disabled
+  // if (!user.name().isEmpty()) {
+  //   const QString premium = (user.type() == APIUserAccountTypes::Premium ? "*" : "");
+  //   title.append(QString(" (%1%2)").arg(user.name(), premium));
+  // }
 
   this->setWindowTitle(title);
 }
