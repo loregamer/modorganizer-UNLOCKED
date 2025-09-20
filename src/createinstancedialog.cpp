@@ -360,6 +360,9 @@ void CreateInstanceDialog::finish()
     s.setProfileLocalSaves(ci.profileSettings.localSaves);
     s.setProfileArchiveInvalidation(ci.profileSettings.archiveInvalidation);
 
+    // Set default theme to 1809 Dark Mode for new instances
+    s.interface().setStyleName("1809 Dark Mode.qss");
+
     logCreation(tr("Writing %1...").arg(ci.iniPath));
 
     // writing ini
